@@ -37,10 +37,6 @@ build {
   # https://developer.hashicorp.com/packer/docs/templates/hcl_templates/blocks/build/provisioner
   provisioner "shell" {
     inline = [
-        # to resolve the debconf issue
-      "echo set debconf to Noninteractive",
-      "echo 'debconf debconf/frontend select Noninteractive' | sudo debconf-set-selections",
-
       "echo creating directories",
       "sudo mkdir -p /web/html",
       "sudo mkdir -p /tmp/web",
